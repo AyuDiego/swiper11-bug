@@ -1,10 +1,10 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CarouselComponent } from './carousel.component';
 
    
-import { CarouselComponent } from './web-carousel.component';
-
+ 
 
 
 describe('CarouselComponent', () => {

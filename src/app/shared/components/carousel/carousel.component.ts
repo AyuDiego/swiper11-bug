@@ -13,17 +13,17 @@ import {
   ViewChildren,
   ViewEncapsulation,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 // import function to register Swiper custom elements
 import { Swiper, SwiperOptions } from 'swiper/types';
-import { SwiperDirective } from '../../directives';
 import { SwiperContainer } from 'swiper/element'; 
+import { SwiperDirective } from '../../directive/swiper.directive';
 
 @Component({
   selector: 'web-carousel',
   standalone: true,
-  templateUrl: './web-carousel.component.html',
-  styleUrl: './carousel.component.scss',
+  templateUrl: 'web-carousel.component.html',
+  styleUrl: 'carousel.component.scss',
   imports: [CommonModule, SwiperDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 
   changeDetection: ChangeDetectionStrategy.OnPush,

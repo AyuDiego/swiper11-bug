@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+ 
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 
@@ -8,14 +8,13 @@ import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http'
 import { BrowserModule} from '@angular/platform-browser';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common'; 
 import { AppComponent } from './app/app.component'; 
+import { SharedModule } from './app/shared/shared.module';
  
-const SHARED_MODULES = [
  
-]; 
 
-bootstrapApplication(AppComponent, {
+bootstrapApplication(AppComponent,  {
     providers: [
-        importProvidersFrom(BrowserModule,  NgbModule),
+        importProvidersFrom(BrowserModule,  NgbModule, SharedModule),
          { provide: LocationStrategy, useClass: PathLocationStrategy },
         provideHttpClient(withInterceptorsFromDi()),
     ]
