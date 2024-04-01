@@ -1,15 +1,16 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, HostBinding } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 import { register } from 'swiper/element/bundle';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
 register();
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [CommonModule, RouterOutlet],
+  imports: [ RouterModule, CommonModule, SharedModule ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
@@ -18,15 +19,14 @@ export class AppComponent {
   constructor() {}
 
   imageUrls: string[] = [
-    location.origin + '/assets/img/carousel/carousel/0.webp',
-    location.origin + '/assets/img/carousel/carousel/1.webp',
-    location.origin + '/assets/img/carousel/carousel/0.webp',
-    location.origin + '/assets/img/carousel/carousel/0.webp',
-    location.origin + '/assets/img/carousel/carousel/1.webp',
-    location.origin + '/assets/img/carousel/carousel/0.webp',
-    location.origin + '/assets/img/carousel/carousel/1.webp',
-    location.origin + '/assets/img/carousel/carousel/0.webp',
-    location.origin + '/assets/img/carousel/carousel/1.webp',
+    'https://swiperjs.com/demos/images/nature-1.jpg',
+   'https://swiperjs.com/demos/images/nature-2.jpg',
+     'https://swiperjs.com/demos/images/nature-3.jpg',
+    'https://swiperjs.com/demos/images/nature-4.jpg',
+    'https://swiperjs.com/demos/images/nature-1.jpg',
+    'https://swiperjs.com/demos/images/nature-2.jpg',
+      'https://swiperjs.com/demos/images/nature-3.jpg',
+     'https://swiperjs.com/demos/images/nature-4.jpg', 
   ];
   source = this.imageUrls;
   

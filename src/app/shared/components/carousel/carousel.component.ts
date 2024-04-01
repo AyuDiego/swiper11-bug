@@ -22,12 +22,13 @@ import { SwiperDirective } from '../../directive/swiper.directive';
 @Component({
   selector: 'web-carousel',
   standalone: true,
-  templateUrl: 'web-carousel.component.html',
-  styleUrl: 'carousel.component.scss',
+  templateUrl: './carousel.component.html',
+  styleUrl: './carousel.component.scss',
   imports: [CommonModule, SwiperDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class') className = 'p-0';
@@ -39,7 +40,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   sliderCards: Partial<any[]> = [];
 
   config: SwiperOptions = {
-    injectStylesUrls: ['assets/styles/styles.css'],
+    injectStylesUrls: ['assets/swiper.css'],
     slidesPerView: 'auto',
     spaceBetween: 24,
     slidesPerGroup: 1,
@@ -70,8 +71,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     freeMode: {
       enabled: true,
       momentum: false,
-      momentumBounce:false,  
-      sticky: true
+      momentumBounce:false, 
     },
     navigation: true
      
@@ -90,7 +90,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     let progressBar: HTMLElement | null = null;
     let observer: MutationObserver | null = null;
     Object.assign(this.config, {
-      injectStylesUrls: ['assets/styles/swiper/swiper.css'],
+      injectStylesUrls: ['assets/swiper.css'],
       pagination: {
         type: 'progressbar',
         horizontalClass: 'swiper-pagination-horizontal-bottom'
