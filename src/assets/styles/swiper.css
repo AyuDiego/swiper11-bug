@@ -10,10 +10,10 @@
   margin-top: 2rem;
   height: 1px;
   background: linear-gradient(to right, transparent, #DAFFFB, #DAFFFB, #DAFFFB,  transparent);
-  .swiper-pagination-progressbar-fill {
-   background: linear-gradient(to right, transparent, #004288, #004288, #004288,  transparent);
+} 
+.swiper-pagination-progressbar-fill {
+ background: linear-gradient(to right, transparent, #004288, #004288, #004288,  transparent);
 
- } 
 } 
 
 :host {
@@ -37,15 +37,7 @@
 
 }
 
-.swiper-button-prev {
-  /* background-image: url("/box-arrow-in-left.svg"); */
-}
 
-.swiper-button-next {
-  /* background-image: url("/box-arrow-in-right.svg");
-   */
-
-}
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #e7e7e76b; 

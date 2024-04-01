@@ -1,17 +1,13 @@
-<p>carousel works!</p>
+
 <div class="stage py-8">
   <section>
     <swiper-container
       #swiperRef
-      swiperElement
-      init="false"
+      swiperElement 
       [config]="config"
       parallax="true"
-      class="mySwiper"
-      (paginationRender)="onPaginationRender($event)"
+      class="mySwiper" 
     > 
- 
-      <div part="button-next" class="swiper-button-next"></div>
       @for (imageUrl of sliderCards; track $index) {
       <swiper-slide class="swiper-slide">
         <div

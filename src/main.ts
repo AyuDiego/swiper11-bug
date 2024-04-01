@@ -8,6 +8,7 @@ import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http'
 import { BrowserModule} from '@angular/platform-browser';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common'; 
 import { AppComponent } from './app/app.component'; 
+import { SharedModule } from './app/shared/shared.module';
 
 
 bootstrapApplication(AppComponent,  {

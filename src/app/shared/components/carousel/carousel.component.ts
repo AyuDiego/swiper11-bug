@@ -13,7 +13,7 @@ import {
   ViewChildren,
   ViewEncapsulation,
 } from '@angular/core';
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 // import function to register Swiper custom elements
 import { Swiper, SwiperOptions } from 'swiper/types';
 import { SwiperContainer } from 'swiper/element'; 
@@ -25,10 +25,9 @@ import { SwiperDirective } from '../../directive/swiper.directive';
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
   imports: [CommonModule, SwiperDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class') className = 'p-0';
@@ -38,9 +37,8 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren('imgRef') imgRefs!: QueryList<ElementRef>;
   @Input()
   sliderCards: Partial<any[]> = [];
-
   config: SwiperOptions = {
-    injectStylesUrls: ['assets/styles.css'],
+    injectStylesUrls: ['src/assets/styles/swiper.css'],
     slidesPerView: 'auto',
     spaceBetween: 24,
     slidesPerGroup: 1,
@@ -71,7 +69,8 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     freeMode: {
       enabled: true,
       momentum: false,
-      momentumBounce:false, 
+      momentumBounce:false,  
+      sticky: true
     },
     navigation: true
      
@@ -90,7 +89,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     let progressBar: HTMLElement | null = null;
     let observer: MutationObserver | null = null;
     Object.assign(this.config, {
-      injectStylesUrls: ['assets/styles.css'],
+      injectStylesUrls: ['src/assets/styles/swiper.css'],
       pagination: {
         type: 'progressbar',
         horizontalClass: 'swiper-pagination-horizontal-bottom'
@@ -113,6 +112,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
           observer = new MutationObserver(() => {
             if (swiper.activeIndex === 0 && progressBar) {
               progressBar.style.transform = 'translate3d(0px, 0px, 0px) scaleX(0) scaleY(1)';
+              // Disconnect the MutationObserver after performing the transformation
               if (observer) {
                 observer.disconnect();
                 observer = null;
@@ -148,10 +148,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.swiperRef.nativeElement.initialize();
 
-  }
-  onPaginationRender(event: Event) {
-    console.log('🚀 ~ CarouselComponent ~ onPaginationRender ~ event', event);
-  }
+  } 
   onImgMouseover(index: number): void {
     this.isHideContent[index] = false;
   }
