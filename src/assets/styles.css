@@ -1,0 +1,60 @@
+.swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal-bottom{
+  --swiper-pagination-color: #6691bf;
+  --swiper-pagination-progressbar-bg-color: #DAFFFB;
+
+  width: 80%;
+  max-width: 80rem;
+  margin-left: auto;
+  position: relative;
+  margin-right: auto;
+  margin-top: 2rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DAFFFB, #DAFFFB, #DAFFFB,  transparent);
+  .swiper-pagination-progressbar-fill {
+   background: linear-gradient(to right, transparent, #004288, #004288, #004288,  transparent);
+
+ } 
+} 
+
+:host {
+  --swiper-navigation-sides-offset: 1.5%;
+  --swiper-navigation-size: 15px !important;
+  --swiper-navigation-color: #DAFFFB !important;
+  --swiper-navigation-top-offset: 43.5% !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  background-position: center;
+  background-size: 54px;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 100%;
+  border: 1px solid rgb(46 54 79 ); 
+  background-color: #06091880; 
+  width: 15px !important;
+
+}
+
+.swiper-button-prev {
+  /* background-image: url("/box-arrow-in-left.svg"); */
+}
+
+.swiper-button-next {
+  /* background-image: url("/box-arrow-in-right.svg");
+   */
+
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #e7e7e76b; 
+  border: 1px solid rgb(46 54 79 );
+  color: rgb(46 54 79 );
+}
+.swiper-button-next::after,.swiper-button-prev::after {
+  
+  border: 1px solid rgb(46 54 79 );
+  width: 54px;
+}
+
