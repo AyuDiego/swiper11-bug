@@ -40,7 +40,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   sliderCards: Partial<any[]> = [];
 
   config: SwiperOptions = {
-    injectStylesUrls: ['assets/swiper.css'],
+    injectStylesUrls: ['assets/styles.css'],
     slidesPerView: 'auto',
     spaceBetween: 24,
     slidesPerGroup: 1,
@@ -90,7 +90,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     let progressBar: HTMLElement | null = null;
     let observer: MutationObserver | null = null;
     Object.assign(this.config, {
-      injectStylesUrls: ['assets/swiper.css'],
+      injectStylesUrls: ['assets/styles.css'],
       pagination: {
         type: 'progressbar',
         horizontalClass: 'swiper-pagination-horizontal-bottom'
@@ -113,7 +113,6 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
           observer = new MutationObserver(() => {
             if (swiper.activeIndex === 0 && progressBar) {
               progressBar.style.transform = 'translate3d(0px, 0px, 0px) scaleX(0) scaleY(1)';
-              // Disconnect the MutationObserver after performing the transformation
               if (observer) {
                 observer.disconnect();
                 observer = null;
