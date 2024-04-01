@@ -38,7 +38,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input()
   sliderCards: Partial<any[]> = [];
   config: SwiperOptions = {
-    injectStylesUrls: ['src/assets/styles/swiper.css'],
+    injectStylesUrls: ['assets/styles/swiper.css'],
     slidesPerView: 'auto',
     spaceBetween: 24,
     slidesPerGroup: 1,
@@ -69,8 +69,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     freeMode: {
       enabled: true,
       momentum: false,
-      momentumBounce:false,  
-      sticky: true
+      momentumBounce: false,
     },
     navigation: true
      
@@ -89,10 +88,11 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     let progressBar: HTMLElement | null = null;
     let observer: MutationObserver | null = null;
     Object.assign(this.config, {
-      injectStylesUrls: ['src/assets/styles/swiper.css'],
+      injectStylesUrls: ['assets/styles/swiper.css'], 
       pagination: {
         type: 'progressbar',
-        horizontalClass: 'swiper-pagination-horizontal-bottom'
+        horizontalClass: 'swiper-pagination-horizontal-bottom',
+
       },
       on: {
         init: (swiper: Swiper) => {

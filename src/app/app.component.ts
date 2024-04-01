@@ -10,30 +10,30 @@ register();
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [ RouterModule, CommonModule, SharedModule ],
+  imports: [RouterModule, CommonModule, SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   @HostBinding('class') className = 'flex-container padding-top-82 py-32 bg-web-primary-700';
   @HostBinding('id') id = 'carousel';
-  constructor() {}
+  constructor() { }
 
   imageUrls: string[] = [
     'https://swiperjs.com/demos/images/nature-1.jpg',
-   'https://swiperjs.com/demos/images/nature-2.jpg',
-     'https://swiperjs.com/demos/images/nature-3.jpg',
+    'https://swiperjs.com/demos/images/nature-2.jpg',
+    'https://swiperjs.com/demos/images/nature-3.jpg',
     'https://swiperjs.com/demos/images/nature-4.jpg',
     'https://swiperjs.com/demos/images/nature-1.jpg',
     'https://swiperjs.com/demos/images/nature-2.jpg',
-      'https://swiperjs.com/demos/images/nature-3.jpg',
-     'https://swiperjs.com/demos/images/nature-4.jpg', 
+    'https://swiperjs.com/demos/images/nature-3.jpg',
+    'https://swiperjs.com/demos/images/nature-4.jpg',
   ];
   source = this.imageUrls;
-  
-  ngAfterViewInit() { 
-  
+
+  ngAfterViewInit() {
+
   }
-  
+
   ngOnInit() {
     console.log('carouselComponent ngOnInit');
   }

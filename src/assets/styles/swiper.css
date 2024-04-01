@@ -1,4 +1,29 @@
-.swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal-bottom{
+:host {
+  --swiper-navigation-sides-offset: 1.5%;
+  --swiper-navigation-size: 15px !important;
+  --swiper-navigation-color: #DAFFFB !important;
+  --swiper-navigation-top-offset: 43.5% !important;
+}
+
+.swiper .swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal-bottom{
+  --swiper-pagination-color: #6691bf;
+  --swiper-pagination-progressbar-bg-color: #DAFFFB;
+  width: 80%;
+  max-width: 80rem;
+  margin-left: auto;
+  position: relative;
+  margin-right: auto;
+  margin-top: 2rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DAFFFB, #DAFFFB, #DAFFFB,  transparent);
+  .swiper-pagination-progressbar-fill {
+   background: linear-gradient(to right, transparent, #004288, #004288, #004288,  transparent);
+  
+  } 
+} 
+.swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, 
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, 
+.swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
   --swiper-pagination-color: #6691bf;
   --swiper-pagination-progressbar-bg-color: #DAFFFB;
 
@@ -10,18 +35,11 @@
   margin-top: 2rem;
   height: 1px;
   background: linear-gradient(to right, transparent, #DAFFFB, #DAFFFB, #DAFFFB,  transparent);
-} 
-.swiper-pagination-progressbar-fill {
- background: linear-gradient(to right, transparent, #004288, #004288, #004288,  transparent);
 
-} 
-
-:host {
-  --swiper-navigation-sides-offset: 1.5%;
-  --swiper-navigation-size: 15px !important;
-  --swiper-navigation-color: #DAFFFB !important;
-  --swiper-navigation-top-offset: 43.5% !important;
+  
 }
+
+
 
 .swiper-button-next,
 .swiper-button-prev {
